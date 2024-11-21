@@ -1,5 +1,5 @@
 module "ec2" {
-    source = "/home/cloudshell-user/terraform/module_block/resource/ec2"
+    source = "/home/cloudshell-user/Terraform/Module_block/Resources/EC2"
     this_This_ami = "ami-0dee22c13ea7a9a67"
     this_ec2type = "t2.micro"
     This_key  = "mumbai_2"
@@ -12,7 +12,7 @@ module "ec2" {
 }
 
 module "aws_vpc" {
-     source = "/home/cloudshell-user/terraform/module_block/resource/vpc"
+     source = "/home/cloudshell-user/Terraform/Module_block/Resources/VPC"
      this_vpc_cidr_block = "192.168.0.0/16"
      this_vpc_tags = "this_vpc"
      this_subnet_pub_cidr_block = "192.168.0.0/17"
