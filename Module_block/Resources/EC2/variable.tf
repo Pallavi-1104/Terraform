@@ -1,35 +1,40 @@
-variable "this_image_id" {
+# Security Group
+variable "vpc_id" {
+  description = "The ID of the VPC where the security group will be created"
   type        = string
 }
 
-
-variable "this_count" {
-    type = number 
-    default = 2
-     
-}
-variable "this_vpc_security_group_ids" {
-    type = string 
-    default = "sg-0b1ef1f40fb94ec14"
-     
+variable "sg_name" {
+  description = "Name for the security group"
+  type        = string
+  default     = "ec2-security-group"
 }
 
-variable "this_list" {
-    type = string
-     
+variable "allowed_ssh_cidrs" {
+  description = "CIDR blocks allowed for SSH access"
+  type        = list(string)
+  default     = ["0.0.0.0/0"]
 }
 
-variable "this_disable_api_stop" {
-     type = bool
-
+# EC2 Instance
+variable "ami_id" {
+  description = "AMI ID for the EC2 instance"
+  type        = string
 }
 
-variable "this_disable_api_termination" {
-  type = bool
-
+variable "instance_type" {
+  description = "Instance type for the EC2 instance"
+  type        = string
+  default     = "t2.micro"
 }
 
-variable "this_aws_instance_subnet" {
-   type = string
+variable "subnet_id" {
+  description = "The ID of the subnet where the EC2 instance will be launched"
+  type        = string
+}
 
+variable "instance_name" {
+  description = "Name tag for the EC2 instance"
+  type        = string
+  default     = "ec2-instance"
 }
