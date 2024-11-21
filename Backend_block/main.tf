@@ -6,7 +6,7 @@ terraform {
         key = "terraform.tfstate"
         dynamodb_table = "cbz38"
         region = "ap-south-1"
-        profile = "configs"
+        profile = "config"
         shared_credentials_files = ["/home/pallavi/.aws/credentials"]
     }
 }
